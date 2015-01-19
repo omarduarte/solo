@@ -1,0 +1,26 @@
+{
+  "name": "HearMeRoar",
+  "version": "0.0.1",
+  "description": "Song queue for Karaokee bars",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.10.1",
+    "express": "^4.11.0",
+    "mongoose": "^3.8.21"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/omarduarte/2014-12-solo.git"
+  },
+  "author": "Omar Duarte",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/omarduarte/2014-12-solo/issues"
+  },
+  "homepage": "https://github.com/omarduarte/2014-12-solo"
+}

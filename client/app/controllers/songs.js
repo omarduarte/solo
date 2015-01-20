@@ -9,5 +9,10 @@ angular.module('HearMeRoar.songs', ['HearMeRoar.api.services'])
     });
   };
 
+  $scope.showSong = function(song) {
+  	Song.pushToCache(song);
+  	window.location.href = '/#/song-info';
+  }
+
   $scope.getSongs();
 }]);

@@ -26,7 +26,8 @@ pids
 logs
 
 bower_components
+client/lib
 npm-debug.log
 node_modules
 public/dist
-app/db
+server/db

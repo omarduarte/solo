@@ -6,6 +6,7 @@ var queueSchema = mongoose.Schema({
     title: String,
     clientName: String,
     hasBeenPlayed: {type: Boolean, default: false},
+    nowPlaying: {type: Boolean, default: false},
     createdAt: Date
 });
 

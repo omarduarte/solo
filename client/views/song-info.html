@@ -1,1 +1,14 @@
-song-info.html
+<div>
+  <h3>Select a Song</h3>
+  <div class="song-info">
+    <div class="artist">{{ song.artist }}</div>
+    <div class="title">{{ song.title }}</div>
+    <div class="album">{{ song.album }}</div>
+    <div class="genre">{{ song.genre }}</div>
+
+    <form novalidate ng-submit="enqueue(clientName, song)">
+      Enter Your Name: <input type="Name" ng-model="clientName" />
+      <button>SING IT</button>
+    </form>
+  </div>
+</div>

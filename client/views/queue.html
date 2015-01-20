@@ -1,9 +1,39 @@
-<div>
-  <h3>Next Up:</h3>
-  <div class="queue" ng-repeat="queueItem in queue">
-  	<span class="position">{{ $index + 1 }}.</span>
-    <span class="singer"> {{ queueItem.clientName }} - </span>
-    <span class="title">{{ queueItem.title }} by </span>
-    <span class="artist">{{ queueItem.artist }}</span>
+<div class="top-bar">
+  <h1>HEAR ME ROAR!</h1>
+  <a href="#menu" class="menu-link">&#9776;</a>
+  <div ng-include="'views/slider.html'"></div>
+</div>
+
+<div class="now-playing">
+  
+  <div class="describe">
+    <span class="playing">NOW PERFORMING</span>
+    <span class="client-name">{{ nowPlaying.clientName }}</span>
   </div>
+
+  <div class="song">
+    <div class="title">
+      {{ nowPlaying.title }}
+    </div>
+    <div class="artist">
+      {{ nowPlaying.artist }}
+    </div>
+  </div>
+</div>
+
+<div class="queue-container">
+  <div class="next">NEXT IN LINE</div>
+  <div class="queue-item" ng-repeat="queueItem in queue">
+    <div class="performance">  
+      <div class="position">{{ $index + 1 }}</div>
+      <div class="client-name">
+        {{ queueItem.clientName }} <span class="playing">SINGS</span>
+      </div>
+      <div class="song"> 
+        <span class="title">{{ queueItem.title }}</span>
+        <span class="artist">{{ queueItem.artist }}</span>
+      </div>
+    </div>
+  </div>
+
 </div>

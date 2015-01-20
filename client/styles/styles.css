@@ -1,0 +1,257 @@
+/*
+font-family: 'Fjalla One', sans-serif;
+font-family: 'Exo 2', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Knewave', cursive;
+*/
+
+/*@media only screen and (min-width:480px) and (max-width: 640px)  {
+  }
+*/  
+  body {
+    background-color: #E8DDB5;
+    width: 100%;
+    margin: 0;
+  }
+ 
+  /*
+   *
+    client/views/queue.html
+   *
+   */
+
+   .top-bar {
+    width: 100%;
+    height: 45px;
+    background-color: #732C2C
+   }
+
+   .top-bar h1 {
+    display: inline-block;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 20px;
+    height: 100%;
+    color: white;
+    padding: 0 0 5px 5px;
+    margin: 10px 0 5px 5px;
+   }
+
+   .now-playing {
+    display: block;    
+    width: 80%;
+    margin: 20px auto;
+   }
+
+   .playing {
+    font-family: 'Roboto', sans-serif;
+    color: #6A6262;
+    font-size: 12px;
+    font-weight: 2em;
+   }
+
+   .client-name {
+    font-family: 'Roboto', sans-serif;
+    color: #202030;
+    padding-left: 10px;
+    font-size: 18px;
+   }
+
+   .song {
+    background-color: #39304A;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 20px;
+    color: white;
+    -webkit-box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.29);
+    -moz-box-shadow:    4px 4px 0px 0px rgba(0, 0, 0, 0.29);
+    box-shadow:         4px 4px 0px 0px rgba(0, 0, 0, 0.29);
+   }
+
+   .artist {
+    height: 30px;
+    padding-left: 15px;
+    font-size: 18px;
+    color: grey;
+   }
+
+   .title {
+    height: 30px;
+    padding-left: 15px;
+
+   }
+
+   .queue-container {
+    width: 80%;
+    height: 100%;
+    margin: 25px auto;
+    padding-bottom: 40px;
+   }
+
+   .queue-container .next {
+    font-family: 'Roboto', sans-serif;
+    color: #6A6262;
+    font-size: 12px;
+    font-weight: 2em;
+   }
+
+   .queue-item .client-name {
+    display: inline;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    color: #202030;
+    padding-left: 10px;
+    font-size: 25px;
+   }
+
+   
+   .position {
+    display: inline;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    color: #6A6262;
+    font-size: 60px;
+   }
+
+   .performance {
+    display: inline-block;
+    width: 100%;
+   }
+
+   .queue-container .song {
+    display: inline-block;
+    width: 100%;
+   }
+
+   .queue-container .artist {
+    height: 30px;
+    padding-left: 15px;
+    font-size: 14px;
+    color: #E8DDB5;
+   }
+
+   .queue-container .title {
+    height: 30px;
+    padding-left: 15px;
+   }
+
+  /*
+   *
+    client/views/in-queue.html
+   *
+   */
+
+  .big-title {
+    display: block;
+    font-family: 'Knewave', cursive;
+    font-size: 90px;
+    color: #732C2C;
+    margin: 40px auto;
+    text-align: center;
+    text-shadow: 2px 2px 2px rgba(150, 150, 150, 1);
+  }
+
+  .in-queue {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    display: block;
+    color: #39304A;
+    font-size: 25px;
+    margin: 20px auto;
+    padding: 0 25px 0 25px;
+    text-shadow: 3px 3px 6px rgba(150, 150, 150, 1);
+  }
+
+  .nav-button-container {
+    padding-top: 20px;
+    margin: 0 auto;
+    width: 100%
+  }
+
+  .nav-button {
+    margin-top: 20px;
+  }
+
+  /*
+   *
+   *
+    BUTTONS
+   *
+   *
+   */
+
+/*Main button class
+==========================*/
+.ph-button {
+    width: 240px;
+    margin: 20px auto;
+
+    border-style: solid;
+    border-width: 0px 0px 3px;
+    box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
+    color: #FFFFFF;    
+    border-radius: 6px;
+    cursor: pointer;
+    display: block;
+    font-style: normal;
+    overflow: hidden;
+    text-align: center;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    transition: all 200ms ease-in-out 0s;
+    white-space: nowrap;  
+    font-family: "Gotham Rounded A","Gotham Rounded B",Helvetica,Arial,sans-serif;
+    font-weight: 700; 
+    padding: 19px 39px 18px;
+    font-size: 18px;
+  
+}
+/*Green
+==========================*/
+.ph-btn-green {
+
+    border-color: #3AC162;
+  background-color: #5FCF80;
+
+}
+.ph-btn-green:hover, .ph-btn-green:focus, .ph-btn-green:active {
+    background-color: #4BC970;
+    border-color: #3AC162;    
+}
+
+/*Blue
+==========================*/
+.ph-btn-blue {
+
+    border-color: #326E99;
+    background-color: #3F8ABF;
+}
+
+.ph-btn-blue:hover, .ph-btn-blue:focus, .ph-btn-blue:active {
+    background-color: #397CAC;
+    border-color: #326E99;   
+}
+
+/*Grey
+==========================*/
+.ph-btn-grey {
+
+     background-color: #C6CCD2;
+     border-color: #AAB3BB;
+}
+.ph-btn-grey:hover, .ph-btn-grey:focus, .ph-btn-grey:active {
+    background-color: #B8BFC7;
+    border-color: #AAB3BB; 
+}
+
+/*Red
+==========================*/
+.ph-btn-red {
+
+    background-color: #ED5A5A !important;
+    border-color: #EA4343 !important;
+
+}
+.ph-btn-red:hover, .ph-btn-red:focus, .ph-btn-red:active {
+    background: none repeat scroll 0 0 #EB4848 !important;
+    border-color: #E83131 !important;    
+}
+

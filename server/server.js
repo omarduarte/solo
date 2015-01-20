@@ -13,14 +13,15 @@ app.use(express.static(__dirname + '/../client'));
 
 app.get('/addsong', function(req, res) {
   var song = new Song({
-    title: 'Oh babey',
-    artist: 'The Rollercoasters',
-    album: 'Are we high?',
-    genre: 'Electro-Maldivan-Folk'
+    title: 'Cane',
+    artist: 'Releive',
+    album: 'Mufase',
+    genre: 'Samba'
   });
 
   song.save(function(err, song) {
     if (err) { throw err; }
+    res.sendStatus(200);
   });
 
 });
@@ -31,9 +32,16 @@ app.get('/api/songs', function(req, res) {
   });
 });
 
-app.get('/api/queue', function(req, res) {
-  Queue.find(function(err, queue) {
+app.get('/api/song', function(req, res) {
+  var songID = req.body.songID;
+  Song.find({ _id: songID }, function(err, song) {
     if (err) { throw err; }
+    res.send(200, song);
+  });
+});
+
+app.get('/api/queue', function(req, res) {
+  Queue.find({ hasBeenPlayed: false}).sort('createdAt').exec(function(err, queue) {
     res.send(200, queue);
   });
 });
@@ -58,13 +66,17 @@ app.post('/api/queue', function(req, res) {
 
 });
 
-app.put('/api/queue', function(req, res) {
-  var id = req.body.queueID;
-  Queue.update({_id: id}, {hasBeenPlayed: true}, function(err, numAffected, raw){
-
-    res.sendStatus(201);
+app.get('/api/next-song', function(req, res) {
+  Queue.update({nowPlaying: true}, { hasBeenPlayed: true, nowPlaying:false }, function(err, numAffected, raw) {
+    Queue.find({ hasBeenPlayed: false}).sort('createdAt').exec(function(err, queue) {
+      queue[0].nowPlaying = true;
+      console.dir(queue);
+      queue[0].save(function(err, queueItem) {
+        if (err) { throw err; }
+        res.send(200, queue);
+      });
+    });
   });
-  
 });
 
 app.get('/displayQueue', function(req, res) {

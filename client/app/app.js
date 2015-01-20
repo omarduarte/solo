@@ -1,4 +1,4 @@
-var app = angular.module('HearMeRoar', ['HearMeRoar.songs','HearMeRoar.queue','HearMeRoar.songInfo','HearMeRoar.inQueue' ,'ngRoute'])
+var app = angular.module('HearMeRoar', ['HearMeRoar.songs','HearMeRoar.queue','HearMeRoar.songInfo','HearMeRoar.inQueue' ,'ngRoute', 'shoppinpal.mobile-menu'])
 .config(function($routeProvider) {
   $routeProvider
     .when('/songs', {

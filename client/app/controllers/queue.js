@@ -1,4 +1,4 @@
-angular.module('HearMeRoar.queue', ['HearMeRoar.api.services'])
+angular.module('HearMeRoar.queue', ['HearMeRoar.api.services', 'shoppinpal.mobile-menu'])
 
 .controller('QueueController', ['$scope', 'Queue', function($scope, Queue) {
   $scope.queue;

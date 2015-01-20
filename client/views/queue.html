@@ -1,7 +1,5 @@
 <div class="top-bar">
   <h1>HEAR ME ROAR!</h1>
-  <a href="#menu" class="menu-link">&#9776;</a>
-  <div ng-include="'views/slider.html'"></div>
 </div>
 
 <div class="now-playing">
@@ -31,9 +29,21 @@
       </div>
       <div class="song"> 
         <span class="title">{{ queueItem.title }}</span>
-        <span class="artist">{{ queueItem.artist }}</span>
+        <span class="artist">by: {{ queueItem.artist }}</span>
       </div>
     </div>
   </div>
+</div>
 
+<div class="nav">
+  <div class="songs-page">
+    <a href="/#/songs">
+      SONG LIST
+    </a>
+  </div>
+  <div class="queue-page">
+    <a href="/#/queue">
+      KARAOKE LINE
+    </a>
+  </div>
 </div>

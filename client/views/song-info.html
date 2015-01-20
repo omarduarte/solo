@@ -1,14 +1,32 @@
-<div>
-  <h3>Select a Song</h3>
-  <div class="song-info">
-    <div class="artist">{{ song.artist }}</div>
-    <div class="title">{{ song.title }}</div>
-    <div class="album">{{ song.album }}</div>
-    <div class="genre">{{ song.genre }}</div>
+<div class="top-bar">
+  <h1>HEAR ME ROAR!</h1>
+</div>
 
+<div class="song-info">
+    <div class="title">{{ song.title }}</div>
+    
+    <div class="artist-album">
+      <span class="artist">{{ song.artist }} </span>
+      <span class="album">{{ song.album }}</span>
+    </div>
+    <div class="ready">
+      Are you ready to sing?
+    </div>
     <form novalidate ng-submit="enqueue(clientName, song)">
-      Enter Your Name: <input type="Name" ng-model="clientName" />
-      <button>SING IT</button>
+      <input class="client-name" type="Name" ng-model="clientName" placeholder="Enter Your Name"/>
+      <button class="ph-button ph-btn-blue">SING IT</button>
     </form>
+</div>
+
+<div class="nav">
+  <div class="songs-page">
+    <a href="/#/songs">
+      SONG LIST
+    </a>
+  </div>
+  <div class="queue-page">
+    <a href="/#/queue">
+      KARAOKE LINE
+    </a>
   </div>
 </div>

@@ -13,8 +13,166 @@ font-family: 'Knewave', cursive;
     width: 100%;
     margin: 0;
   }
- 
+
+  .nav {
+    bottom: 0px;
+    width: 100%;
+    position: fixed;
+    height: 40px;
+    background-color: #732C2C;
+  }
+
+  .songs-page {
+    display: inline;
+    float: left;
+    width: 50%;
+    border-width: 2px;
+    border-color: gray;
+    text-align: center;
+    padding-top: 8px;
+  }
+  
+  .queue-page {
+    display: inline;
+    float: right;
+    width: 50%;
+    border-width: 2px;
+    border-color: gray;
+    text-align: center;
+    padding-top: 8px;
+
+  }
+
+  .nav a {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    text-decoration: none;
+  }
+
   /*
+   *
+    client/views/songs.html
+   *
+   */
+
+  #search input[type="text"] {
+    outline: none;
+    display: block;
+    margin: 20px auto;
+    /* background: url('../assets/img/search-dark.png') no-repeat 10px 6px rgba(68, 68, 68, 0.17); */
+    background: url('../assets/img/search-dark.png') no-repeat 10px 6px rgba(68, 68, 68, 0.50);
+
+    font: 16px Helvetica,Arial,Sans-serif;
+    /*color: #202030; */
+    color: white;
+    width: 80%;
+    padding: 6px 15px 6px 35px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    -webkit-transition: all 0.7s ease 0s;
+    -moz-transition: all 0.7s ease 0s;
+    -o-transition: all 0.7s ease 0s;
+    transition: all 0.7s ease 0s;
+  }
+
+  #search input[type="text"]:focus {
+    background: url('../assets/img/search-dark.png') no-repeat 10px 6px rgba(68, 68, 68, 0.75);
+  }
+
+  .song-list {
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.15);
+    border-top: 1px;
+    border-style: outset;
+    height: 70px;
+    width: 90%;
+    cursor: pointer;
+  }
+  .song-list:hover {
+    background-color: rgba(0, 0, 0, 0.35);
+    border-style: inset;
+  }
+
+  .song-list-container {
+    margin-bottom: 60px;
+  }
+
+  .song-list-item-container {
+    padding-left: 15px;
+    width: 100%;
+  }
+
+  .song-list-item {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .song-list-item .title {
+    font: bold 22px Helvetica,Arial,Sans-serif;
+    color: #202030;
+  }
+
+  .song-list-item .artist {
+    font: 17px Helvetica,Arial,Sans-serif;
+    color: #202030;
+  }
+
+  .song-list-item .album {
+    font: 17px Helvetica,Arial,Sans-serif;
+    color: #6A6262;
+  }
+  /*
+   *
+    client/views/song-info.html
+   *
+   */
+
+  .song-info {
+    margin-top: 120px;
+  }
+
+  .song-info .title {
+    font: bold 32px Helvetica,Arial,Sans-serif;
+    text-align: center;
+  }
+
+  .song-info .artist-album {
+    text-align: center;
+    padding: 20px;    
+  }
+
+  .artist-album .artist {
+    font: bold 22px Helvetica,Arial,Sans-serif; 
+    color: #202030;
+  } 
+
+  .artist-album .album {
+    font: 22px Helvetica,Arial,Sans-serif; 
+    color: #6A6262;
+  }
+
+  .ready {
+    display: block;
+    font-family: 'Knewave', cursive;
+    font-size: 30px;
+    color: #732C2C;
+    margin: 40px auto;
+    text-align: center;
+    text-shadow: 2px 2px 2px rgba(150, 150, 150, 0.80);
+  }
+
+  form .client-name {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+   /*
    *
     client/views/queue.html
    *
@@ -23,23 +181,24 @@ font-family: 'Knewave', cursive;
    .top-bar {
     width: 100%;
     height: 45px;
-    background-color: #732C2C
+    background-color: #732C2C;
+    position: fixed;
+    top: 0;
    }
 
-   .top-bar h1 {
-    display: inline-block;
+   .top-bar h1 {    
     font-family: 'Fjalla One', sans-serif;
     font-size: 20px;
     height: 100%;
     color: white;
     padding: 0 0 5px 5px;
-    margin: 10px 0 5px 5px;
+    text-align: center;
    }
 
    .now-playing {
     display: block;    
     width: 80%;
-    margin: 20px auto;
+    margin: 60px auto 30px;
    }
 
    .playing {
@@ -108,24 +267,27 @@ font-family: 'Knewave', cursive;
     height: 100%;
     font-family: 'Roboto', sans-serif;
     color: #6A6262;
-    font-size: 60px;
+    font-size: 35px;
    }
 
+   .queue-item {
+    margin-bottom: 10px;
+   }
    .performance {
     display: inline-block;
     width: 100%;
    }
 
-   .queue-container .song {
+   .queue-item .song {
     display: inline-block;
     width: 100%;
    }
 
-   .queue-container .artist {
+   .queue-item .artist {
     height: 30px;
     padding-left: 15px;
-    font-size: 14px;
-    color: #E8DDB5;
+    font-size: 15px;
+    color: gray;
    }
 
    .queue-container .title {

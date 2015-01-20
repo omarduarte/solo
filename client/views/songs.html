@@ -1,12 +1,30 @@
-<div>
-  <h3>Select a Song</h3>
+<form id="search">
+	<input type="text" ng-model="selection" placeholder="Find your song..."/>
+</form>
 
-  <input type="text" ng-model="selection" placeholder="Search For your song"/>
+<div class="song-list-container">
+	<div class="song-list" ng-repeat="song in songs | filter: selection">
+		<div class="song-list-item-container" ng-click="showSong(song)">
+			<div class="song-list-item">
+			  <div class="title">{{ song.title }}</div>
+			  <div class="artist-album-container">
+				  <span class="artist">{{ song.artist }} </span>
+				  <span class="album">  {{ song.album }}</span>
+			  </div>
+			</div>
+		</div>
+	</div>
+</div>
 
-  <div class="song-list" ng-repeat="song in songs | filter: selection">
-    <div class="song" ng-click="showSong(song)">
-      <span class="artist">{{ song.artist }} - </span>
-      <span class="title">{{ song.title }}</span>
-    </div>
+<div class="nav">
+  <div class="songs-page">
+    <a href="/#/songs">
+      SONG LIST
+    </a>
+  </div>
+  <div class="queue-page">
+    <a href="/#/queue">
+      KARAOKE LINE
+    </a>
   </div>
 </div>

@@ -2,7 +2,8 @@ var db = require('../config');
 var mongoose = require('mongoose');
 
 var queueSchema = mongoose.Schema({
-    songID: String,
+    artist: String,
+    title: String,
     clientName: String,
     hasBeenPlayed: {type: Boolean, default: false},
     createdAt: Date

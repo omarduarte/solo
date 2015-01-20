@@ -1,0 +1,9 @@
+<div>
+  <h3>Next Up:</h3>
+  <div class="queue" ng-repeat="queueItem in queue">
+  	<span class="position">{{ $index + 1 }}.</span>
+    <span class="singer"> {{ queueItem.clientName }} - </span>
+    <span class="title">{{ queueItem.title }} by </span>
+    <span class="artist">{{ queueItem.artist }}</span>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Hear Me Roar</title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+  </head>
+
+  <body ng-app='HearMeRoar'>
+
+    <h1>Hear Me Roar</h1>
+
+
+    <div ng-view></div>
+
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
+
+    <script src="../app/controllers/songs.js"></script>
+    <script src="../app/services/api.services.js"></script>
+    <script src="../app/controllers/queue.js"></script>
+    <!-- <script src="../app/controllers/SongInfoController.js"></script> -->
+    <script src="../app/app.js"></script>
+  </body>
+</html>

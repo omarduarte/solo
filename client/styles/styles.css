@@ -335,6 +335,31 @@ font-family: 'Knewave', cursive;
   /*
    *
    *
+    client/vies/admin-songs.html
+   *
+   *
+   */
+
+  .add-song {
+    display: block;
+    margin: 20px auto;
+    width: 80%;
+  }
+
+  .add-song form {
+    position: relative;
+    width: 100%
+  }
+
+  .add-song form input[type="text"] {
+    display: inline;
+    height: 30px;
+    width: 22%;
+  }
+
+  /*
+   *
+   *
     BUTTONS
    *
    *
@@ -364,6 +389,32 @@ font-family: 'Knewave', cursive;
     font-weight: 700; 
     padding: 19px 39px 18px;
     font-size: 18px;
+  
+}
+
+.ph-button2 {
+    width: 240px;
+    display: inline;
+    position: relative;
+    float: right;
+    margin: 10px 20px;
+    border-style: solid;
+    border-width: 0px 0px 3px;
+    box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
+    color: #FFFFFF;    
+    border-radius: 6px;
+    cursor: pointer;
+    font-style: normal;
+    overflow: hidden;
+    text-align: center;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    transition: all 200ms ease-in-out 0s;
+    white-space: nowrap;  
+    font-family: "Gotham Rounded A","Gotham Rounded B",Helvetica,Arial,sans-serif;
+    font-weight: 70; 
+    padding: 15px 20px 15px;
+    font-size: 15px;
   
 }
 /*Green

@@ -2,6 +2,7 @@
   <h1>HEAR ME ROAR!</h1>
 </div>
 
+
 <div class="now-playing" ng-if="nowPlaying">
   
   <div class="describe">
@@ -19,9 +20,15 @@
   </div>
 </div>
 
+<button class="ph-btn-green ph-button" ng-if="queue" ng-click="playNextSong()">PLAY NEXT SONG</button>
+
+
 <div class="queue-container" ng-if="queue">
   <div class="next">NEXT IN LINE</div>
   <div class="queue-item" ng-repeat="queueItem in queue">
+  	<button ng-click="removeFromSlot(queueItem)" class="delete">
+		  DELETE
+		</button>
     <div class="performance">  
       <div class="position">{{ $index + 1 }}</div>
       <div class="client-name">
@@ -38,12 +45,12 @@
 <div class="nav">
   <div class="songs-page">
     <a href="/#/songs">
-      SONG LIST
+      SONG LIST CONFIG
     </a>
   </div>
   <div class="queue-page">
     <a href="/#/queue">
-      KARAOKE LINE
+      KARAOKE LINE ADMINISTRATION
     </a>
   </div>
 </div>

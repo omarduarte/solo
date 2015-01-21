@@ -1,4 +1,12 @@
-var app = angular.module('HearMeRoar', ['HearMeRoar.songs','HearMeRoar.queue','HearMeRoar.songInfo','HearMeRoar.inQueue' ,'ngRoute'])
+var app = angular.module('HearMeRoar', [
+  'HearMeRoar.songs',
+  'HearMeRoar.queue',
+  'HearMeRoar.songInfo',
+  'HearMeRoar.inQueue' ,
+  'HearMeRoar.admin.songs',
+  'HearMeRoar.admin.queue',
+  'ngRoute'])
+
 .config(function($routeProvider) {
   $routeProvider
     .when('/songs', {
@@ -16,6 +24,18 @@ var app = angular.module('HearMeRoar', ['HearMeRoar.songs','HearMeRoar.queue','H
     .when('/in-queue', {
       templateUrl: '../views/in-queue.html',
       controller: 'InQueueController'
+    })
+    .when('/admin', {
+      templateUrl: '../views/admin-queue.html',
+      controller: 'AdminQueueController'
+    })
+    .when('/admin/queue', {
+      templateUrl: '../views/admin-queue.html',
+      controller: 'AdminQueueController'
+    })
+    .when('/admin/songs', {
+      templateUrl: '../views/admin-songs.html',
+      controller: 'AdminSongsController'
     })
     .otherwise({
       redirectTo: '/songs'

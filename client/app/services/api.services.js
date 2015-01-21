@@ -12,6 +12,14 @@ angular.module('HearMeRoar.api.services', [])
       return $http.get('/api/songs');
     },
 
+    post: function(data) {
+      return $http.post('/api/song', data);
+    },
+
+    delete: function(data) {
+      return $http.delete('/api/song/' + data);
+    },
+
     pushToCache: function(song) {
       selectedSong = {
         _id:    song._id,
@@ -38,14 +46,18 @@ angular.module('HearMeRoar.api.services', [])
       return $http.get('/api/queue');
     },
 
+    nextSong: function() {
+      return $http.get('/api/next-song');
+    },
+
     // Takes in { clientName: ..., songID: ...}
     enqueue: function(data) {
       return $http.post('/api/queue', data)
     },
     
     // Takes in { queueID: ...}
-    dequeue: function(data) {
-      return $http.put('/api/queue', data)
+    delete: function(data) {
+      return $http.delete('/api/queue/' + data)
     }
   };
 }])

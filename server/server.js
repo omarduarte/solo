@@ -32,11 +32,35 @@ app.get('/api/songs', function(req, res) {
   });
 });
 
+app.post('/api/song', function(req, res) {
+  var song = new Song({
+    title: req.body.title,
+    artist: req.body.artist,
+    album: req.body.album,
+    genre: req.body.genre
+  });
+  
+  song.save(function(err, song) {
+    if (err) { throw err; }
+    res.sendStatus(201);
+  });
+});
+
 app.get('/api/song', function(req, res) {
   var songID = req.body.songID;
   Song.find({ _id: songID }, function(err, song) {
     if (err) { throw err; }
     res.send(200, song);
+  });
+});
+
+app.delete('/api/song/:_id', function(req, res) {
+  var songID = req.params._id;
+  console.log(songID);
+  Song.remove({ _id: songID }, function(err) {
+    if (err) { throw err; }
+    console.log('Probably deleted.')
+    res.sendStatus(201);
   });
 });
 
@@ -67,14 +91,18 @@ app.post('/api/queue', function(req, res) {
 });
 
 app.get('/api/next-song', function(req, res) {
-  Queue.update({nowPlaying: true}, { hasBeenPlayed: true, nowPlaying:false }, function(err, numAffected, raw) {
+  Queue.update({nowPlaying: true}, { hasBeenPlayed: true, nowPlaying: false }, function(err, numAffected, raw) {
     Queue.find({ hasBeenPlayed: false}).sort('createdAt').exec(function(err, queue) {
-      queue[0].nowPlaying = true;
-      console.dir(queue);
-      queue[0].save(function(err, queueItem) {
-        if (err) { throw err; }
-        res.send(200, queue);
-      });
+      if (queue) {
+        queue[0].nowPlaying = true;
+        console.dir(queue);
+        queue[0].save(function(err, queueItem) {
+          if (err) { throw err; }
+          res.send(200, queue);
+        });
+      } else {
+        res.send(200, []);
+      }
     });
   });
 });
@@ -84,7 +112,14 @@ app.get('/displayQueue', function(req, res) {
     console.dir(queue);
     res.sendStatus(200);
   });
+});
 
+app.delete('/api/queue/:_id', function(req, res) {
+  var queueID = req.params._id;
+  Queue.remove({ _id: queueID }, function(err) {
+    if (err) { throw err; }
+    res.sendStatus(201);
+  });
 });
 
 

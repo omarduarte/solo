@@ -4,11 +4,14 @@
     <meta charset="utf-8" />
     <title>HEAR ME ROAR!</title>
     <link href='http://fonts.googleapis.com/css?family=Knewave|Fjalla+One|Roboto|Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="/styles/styles.css" />
+
+    <!-- <link rel="stylesheet" type="text/css" href="/styles/styles.css" /> -->
     <link rel="stylesheet" href="styles/ng-mobile-menu.css" />
+    <link rel="stylesheet" media="screen and (min-width: 325px) and (max-width: 2024px)" href="styles/styles.css" />
+
   </head>
 
-  <body ng-app='HearMeRoar'>
+  <body ng-app="HearMeRoar">
 
     <div ng-view> </div>
 
@@ -17,8 +20,10 @@
     <script src="lib/ng-mobile-menu.min.js"></script>
 
     <script src="../app/controllers/songs.js"></script>
+    <script src="../app/controllers/admin-songs.js"></script>
     <script src="../app/services/api.services.js"></script>
     <script src="../app/controllers/queue.js"></script>
+    <script src="../app/controllers/admin-queue.js"></script>
     <script src="../app/controllers/in-queue.js"></script>
     <script src="../app/controllers/song-info.js"></script>
     <script src="../app/app.js"></script>

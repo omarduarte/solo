@@ -26,10 +26,10 @@
 <div class="queue-container" ng-if="queue">
   <div class="next">NEXT IN LINE</div>
   <div class="queue-item" ng-repeat="queueItem in queue">
+    <div class="performance">  
   	<button ng-click="removeFromSlot(queueItem)" class="delete">
 		  DELETE
 		</button>
-    <div class="performance">  
       <div class="position">{{ $index + 1 }}</div>
       <div class="client-name">
         {{ queueItem.clientName }} <span class="playing">SINGS</span>
